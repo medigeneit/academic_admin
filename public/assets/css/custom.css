@@ -1,0 +1,57 @@
+.box{border-top:inherit}
+.box .btn{text-align:left; color:#fff}
+.success{    position: absolute;
+				color: red;
+				left: 600px;
+				top: 115px;
+				font-size: 22px;z-index:999;}
+			.box-footer a{color:#ffffff}	
+
+			.record_add{position: absolute;
+				color: red;
+				left: 440px;
+				top: 170px;
+				font-size: 22px;
+				z-index:9;
+				}
+			.multiple_option{
+			   position: absolute;
+				left: 640px;
+				top: 170px;
+
+			}
+
+
+.old_flyer_parent, #p_scents, .single_image{width:75%}
+#addScnt, #remScnt{position:absolute;padding-left:10px; font-size:28px}
+#p_scents .input-group{padding-bottom:10px}
+
+
+
+.old_flyer_parent, .single_image{position:relative}
+.old_flyer, #single_image_remove {
+    position: absolute;
+    right: -35px;
+	top:0;
+	font-size:28px
+}
+.content-header.profile_list{
+background:#222D32;
+padding-left:0;
+  
+}
+
+.profile_list .nav-tabs>li.active>a, .profile_list .nav-tabs>li.active>a:focus, .profile_list.nav-tabs>li.active>a:hover {
+    background-color: #ECF0F5;
+
+}
+
+.profile_list .nav-tabs {
+    border-bottom: none;
+}
+.profile_list a {
+    color: #fff;
+}
+
+
+

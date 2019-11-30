@@ -1,0 +1,62 @@
+/* Responsive CSS
+=====================================================================*/
+@media only screen and (min-width: 991px) and (max-width: 1199px) {
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+            .slider-container .inner-top{height:23%; }
+			.slider-container .slider-text .inner-text p.text{ font-size:30px;}
+            .slider-container .slider-text .inner-text p.link a{font-size:18px;}
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+}
+
+@media (max-width: 319px) {
+
+}
+
+@media only screen and (max-width: 480px){
+           .header-top-section .date, .header-top-section .version, .header-top-section .social{text-align:center}
+		     .notbangla::after {right: 154px;}
+			 .social, .notbangla{margin-top:10px}
+			 .notbangla::after{top:10px}
+			 .link-footer{border-right:none}
+			 .barriar {display:none}
+			 .footer-section{text-align:center}
+			 
+			 
+			}	 
+			
+	}
+@media only screen and (min-width: 480px) {
+		   
+	}
+	
+@media (min-width: 767px) {
+
+
+    .about_section img { width:60%; overflow:hidden; float:left; padding-right:10px; padding-bottom:10px;}
+	.common_detail { padding-top:10px;}
+	.list_page img ul li { width:60%; overflow:hidden; float:left;}
+	.list_page img { width: 5%; overflow:hidden; float:left; hight:50px;}		
+				}
+				
+@media (max-width: 767px) {
+  .footer-bottom-social{text-align:center}
+  .modern-ticker {width: 100%;}
+  .social-footer{float:left !important;}
+  .right_news{margin-top:20px;}
+.navbar-nav .collapsible ul.sm-nowrap > li > a {
+    color: #fff !important;
+    white-space: normal;
+}
+			
+				}
