@@ -4,13 +4,11 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Subjects
-                <small>Subjects list</small>
+                Subject/Course
+                <small>Subject/Course list</small>
             </h1>
-
         </section>
 
         <!-- Main content -->
@@ -22,7 +20,7 @@
 
                     <div class="box">
                         <div class="box-header">
-                            <a href="{{ action('SubjectsController@create') }}" class="btn btn-primary">Add New Subjects</a>
+                            <a href="{{ action('SubjectsController@create') }}" class="btn btn-primary">Add New Subject/Course</a>
                             @if(Session::has('message'))
                                 <div class="allert-message alert-success-message pgray  alert-lg" role="alert">
                                     <p> {{ Session::get('message') }}</p>
@@ -35,12 +33,11 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Subject</th>
+                                    <th>Subject/Course</th>
                                     <th>Classes</th>
                                     <th>Types</th>
                                     <th>Institution Category</th>
                                     <th>Department</th>
-                                    <th>Writer</th>
                                     <th class="no-sort">Actions</th>
                                 </tr>
                                 </thead>
@@ -61,7 +58,6 @@
                                     </td>
                                     <td>{{$row->institution_category}}</td>
                                     <td>{{$row->department}}</td>
-                                    <td>{{$row->writer_name}}</td>
                                     <td>
                                         <a href="{{ action('SubjectsController@edit',['id'=>$row->id]) }}"  class="btn btn-primary">Edit</a>
                                         {!! Form::open(array('route' => array('subjects.destroy', $row->id), 'method' => 'delete','style' => 'display:inline')) !!}

@@ -190,6 +190,10 @@
 
     <script type="text/javascript">
 
+        $('.select2').select2({
+            placeholder:'Select Institution Types',
+        });
+
 
         $("body").on( "change", "[name='institution_category_id']", function() {
             var institution_category_id = $(this).val();

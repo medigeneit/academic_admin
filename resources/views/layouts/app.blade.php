@@ -199,7 +199,7 @@
                                 @endcan
 
                                 @can('Subject')
-                        <li class="@php echo (Request::segment(1)=='subjects')?'active':''  @endphp"><a href="{{ url('subjects') }}"><i class="fa fa-circle-o"></i>Subject</a></li>
+                        <li class="@php echo (Request::segment(1)=='subjects')?'active':''  @endphp"><a href="{{ url('subjects') }}"><i class="fa fa-circle-o"></i>Subject/Course</a></li>
                                 @endcan
                                 @can('Department')
                         <li class="@php echo (Request::segment(1)=='departments')?'active':''  @endphp"><a href="{{ url('departments') }}"><i class="fa fa-circle-o"></i>Department</a></li>
@@ -237,7 +237,7 @@
                         <li class="@php echo (Request::segment(1)=='school-college')?'active':''  @endphp"><a href="{{ url('school-college') }}"><i class="fa fa-circle-o"></i>School & College</a></li>
                         @endcan
                         @can('Madrasha')
-                        <li class="@php echo (Request::segment(1)=='madrasha')?'active':''  @endphp"><a href="{{ url('madrasha') }}"><i class="fa fa-circle-o"></i>Madrasha</a></li>
+                        <li class="@php echo (Request::segment(1)=='madrasha')?'active':''  @endphp"><a href="{{ url('madrasha') }}"><i class="fa fa-circle-o"></i>Madrasah</a></li>
                             @endcan
                             @can('English Medium')
                         <li class="@php echo (Request::segment(1)=='english-medium')?'active':''  @endphp"><a href="{{ url('english-medium') }}"><i class="fa fa-circle-o"></i>English Medium</a></li>
@@ -255,10 +255,10 @@
                         <li class="@php echo (Request::segment(1)=='admission-test')?'active':''  @endphp"><a href="{{ url('admission-test') }}"><i class="fa fa-circle-o"></i>Admission Test</a></li>
                             @endcan
                             @can('Under Graduate')
-                        <li class="@php echo (Request::segment(1)=='under-graduate')?'active':''  @endphp"><a href="{{ url('under-graduate') }}"><i class="fa fa-circle-o"></i>Under Graduate</a></li>
+                        <li class="@php echo (Request::segment(1)=='under-graduate')?'active':''  @endphp"><a href="{{ url('under-graduate') }}"><i class="fa fa-circle-o"></i>Undergraduate</a></li>
                             @endcan
                             @can('Post Graduate')
-                        <li class="@php echo (Request::segment(1)=='post-graduate')?'active':''  @endphp"><a href="{{ url('post-graduate') }}"><i class="fa fa-circle-o"></i>Post Graduate</a></li>
+                        <li class="@php echo (Request::segment(1)=='post-graduate')?'active':''  @endphp"><a href="{{ url('post-graduate') }}"><i class="fa fa-circle-o"></i>Postgraduate</a></li>
                             @endcan
                             @can('Skill Development')
                         <li class="@php echo (Request::segment(1)=='skill-development')?'active':''  @endphp"><a href="{{ url('skill-development') }}"><i class="fa fa-circle-o"></i>Skill Development</a></li>

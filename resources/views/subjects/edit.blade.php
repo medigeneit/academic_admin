@@ -7,11 +7,9 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Subjects
-                <small>Edit Subjects</small>
+                Subject/Course
+                <small>Edit Subject/Course</small>
             </h1>
-
-
         </section>
 
         <!-- Main content -->
@@ -23,7 +21,7 @@
                         <!-- form start -->
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="name">Subject Name</label>
+                                <label for="name">Subject/Course Name</label>
                                 <input type="text" name="title" value="{{ $subjects->title }}" placeholder="Enter Subject Name" id="name" class="form-control" required>
                             </div>
 
@@ -49,11 +47,6 @@
                                 {!! Form::select('department_id', $department, $subjects->department_id,['class'=>'form-control']) !!}
                             </div>
 
-                            <div class="form-group">
-                                <label for="name">Writer</label>
-                                @php $writer->prepend('Select Subject','') @endphp
-                                {!! Form::select('writer_id', $writer, $subjects->writer_id,['class'=>'form-control']) !!}
-                            </div>
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">

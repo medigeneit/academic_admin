@@ -32,10 +32,9 @@ class SubjectsController extends Controller
     public function index()
     {
 
-        $subjects = Subjects::select('subject.*','institution_category.title as institution_category','department.title as department','writer.name as writer_name')
+        $subjects = Subjects::select('subject.*','institution_category.title as institution_category','department.title as department')
             ->leftjoin('institution_category','institution_category.id','subject.institution_category_id')
             ->leftjoin('department','department.id','subject.department_id')
-            ->leftjoin('writer','writer.id','subject.writer_id')
             ->orderBy('id','desc')
             ->get();
 
@@ -64,11 +63,10 @@ class SubjectsController extends Controller
     {
         $institution_type = DB::table('institution_type')->orderBy('id', 'DESC')->pluck('title', 'id');
         $institution_category = DB::table('institution_category')->orderBy('id', 'DESC')->pluck('title', 'id');
-        $writer = DB::table('writer')->orderBy('id', 'DESC')->pluck('name', 'id');
         $classes = DB::table('classes')->orderBy('id', 'DESC')->pluck('title', 'id');
         $level_years = DB::table('level_year')->orderBy('id', 'DESC')->pluck('title', 'id');
         $department = DB::table('department')->orderBy('id', 'DESC')->pluck('title', 'id');
-        return view('subjects.create',['institution_type'=>$institution_type,'institution_category'=>$institution_category,'classes'=>$classes,'writer'=>$writer,'department'=>$department,'level_years'=>$level_years]);
+        return view('subjects.create',['institution_type'=>$institution_type,'institution_category'=>$institution_category,'classes'=>$classes,'department'=>$department,'level_years'=>$level_years]);
     }
 
     /**
@@ -97,6 +95,8 @@ class SubjectsController extends Controller
                     DB::table('subject_has_type')->insert(['type_id'=>$value,'subject_id'=>$subject->id]);
                 }
             }
+
+
 
             if($request->class_id){
                 foreach($request->class_id as $k=>$value){
@@ -141,10 +141,9 @@ class SubjectsController extends Controller
         $institution_category = DB::table('institution_category')->orderBy('id', 'DESC')->pluck('title', 'id');
         $subject_has_class = DB::table('subject_has_class')->where('subject_id',$id)->pluck('class_id','class_id');
         $classes = DB::table('classes')->pluck('title','id');
-        $writer = DB::table('writer')->orderBy('id', 'DESC')->pluck('name', 'id');
         $department = DB::table('department')->orderBy('id', 'DESC')->pluck('title', 'id');
 
-        return view('subjects.edit',['subjects'=>$subjects,'institution_type'=>$institution_type,'subject_has_type'=>$subject_has_type,'institution_category'=>$institution_category,'classes'=>$classes,'subject_has_class'=>$subject_has_class,'writer'=>$writer,'department'=>$department]);
+        return view('subjects.edit',['subjects'=>$subjects,'institution_type'=>$institution_type,'subject_has_type'=>$subject_has_type,'institution_category'=>$institution_category,'classes'=>$classes,'subject_has_class'=>$subject_has_class,'department'=>$department]);
     }
 
     /**
@@ -160,7 +159,7 @@ class SubjectsController extends Controller
         $subjects->title=$request->title;
         $subjects->institution_category_id=$request->institution_category_id;
         $subjects->department_id=$request->department_id;
-        $subjects->writer_id=$request->writer_id;
+
 
         if ($request->file('image')){
             if (File::exists(public_path().'/'.$subjects->image)){

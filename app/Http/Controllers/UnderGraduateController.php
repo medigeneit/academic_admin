@@ -53,21 +53,11 @@ class UnderGraduateController extends Controller
      */
     public function create()
     {
-        $classes = DB::table('classes')
-            ->join('institution_type_has_class','institution_type_has_class.class_id','classes.id')
-            ->where('institution_type_has_class.institution_type_id',8)
-            ->orderBy('id', 'DESC')
-            ->pluck('title', 'id');
-
         $institutions_category = DB::table('institution_category')->orderBy('id', 'DESC')->pluck('title', 'id');
-        $department = DB::table('department')->orderBy('id', 'DESC')->pluck('title', 'id');
-
         $material_type = DB::table('material_type')->orderBy('id', 'DESC')->pluck('title', 'id');
         $content_type = DB::table('content_type')->orderBy('id', 'DESC')->pluck('title', 'id');
-
-        return view('under_graduate.create',['institutions_category'=>$institutions_category,'department'=>$department,'classes'=>$classes,'material_type'=>$material_type,'content_type'=>$content_type]);
+        return view('under_graduate.create',['institutions_category'=>$institutions_category,'material_type'=>$material_type,'content_type'=>$content_type]);
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -82,7 +72,15 @@ class UnderGraduateController extends Controller
             $allData['content_section_id'] = 8;
 
 
-            Contents::create($allData);
+        if($request->department_id){
+            foreach($request->department_id as $k=>$value){
+                $allData['department_id'] = $value;
+                Contents::create($allData);
+            }
+        }
+
+
+
             Session::flash('message', 'Record added successfully');
             return redirect()->action('UnderGraduateController@index');
 

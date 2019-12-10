@@ -18,7 +18,7 @@ class Subjects extends Model
     protected $table='subject';
 
     protected $fillable = [
-        'title','institution_category_id','department_id','writer_id'
+        'title','institution_category_id','department_id'
     ];
 
 
